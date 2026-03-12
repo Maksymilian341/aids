@@ -7,7 +7,7 @@ int main()
     int T[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int key = 0;
     int i = 0;
-    for(int j = 2;j <= sizeof(T);j++)
+    for(int j = 1; j < sizeof(T)/sizeof(T[0]); j++)
     {
         key = T[j];
         i = j - 1;
@@ -18,5 +18,8 @@ int main()
         }
         T[i + 1]=key;
     }
-    cout << T;
+    for(int k = 0; k < sizeof(T)/sizeof(T[0]); k++)
+    {
+        cout << T[k] << " ";
+    }
 }
