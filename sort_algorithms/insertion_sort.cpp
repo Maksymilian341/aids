@@ -3,11 +3,12 @@
 
 using namespace std;
 int main()
-{
-    int T[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    {
+    const int N = 10;
+    int T[N] = {10,5,4,2,3,1,6,7,8,9};
     int key = 0;
     int i = 0;
-    for(int j = 1; j < sizeof(T)/sizeof(T[0]); j++)
+    for(int j = 1;j < N;j++)
     {
         key = T[j];
         i = j - 1;
@@ -18,8 +19,10 @@ int main()
         }
         T[i + 1]=key;
     }
-    for(int k = 0; k < sizeof(T)/sizeof(T[0]); k++)
+    for(int i = 0;i < N;i++)
     {
-        cout << T[k] << " ";
+        cout << T[i] << " ";
     }
-}
+    cout << endl; 
+    return 0;
+    }
