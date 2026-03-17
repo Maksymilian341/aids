@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
 int main()
     {
     const int N = 10;
@@ -21,8 +20,8 @@ int main()
     }
     for(int i = 0;i < N;i++)
     {
-        cout << T[i] << " ";
+        std::cout << T[i] << " ";
     }
-    cout << endl; 
+    std::cout << endl; 
     return 0;
     }
