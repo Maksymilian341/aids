@@ -1,15 +1,27 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <cmath>
 
 using namespace std;
 
 vector<int> generateSedgewickGaps(int n) {
     vector<int> gaps;
-    int h = 1;
+    int k = 0;
 
-    while (h < n / 3) {
-        gaps.push_back(h);
-        h = 3 * h + 1;
+    while (true) {
+        int gap;
+
+        if (k % 2 == 0)
+            gap = 9 * (pow(2, k) - pow(2, k / 2)) + 1;
+        else
+            gap = 8 * pow(2, k) - 6 * pow(2, (k + 1) / 2) + 1;
+
+        if (gap > n)
+            break;
+
+        gaps.push_back(gap);
+        k++;
     }
 
     reverse(gaps.begin(), gaps.end());
