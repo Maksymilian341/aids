@@ -1,15 +1,13 @@
 #include <iostream>
 #include <string>
 
-int main()
-    {
-    const int N = 10;
-    int T[N] = {10,5,4,2,3,1,6,7,8,9};
+void selection_sort(std::vector<int>& T)
+{
     int min = 0;
-    for(int i = 0;i < N - 1;i++)
+    for(int i = 0;i < T.size() - 1;i++)
     {
         min = i;
-        for(int j = i + 1; j < N;j++)
+        for(int j = i + 1; j < T.size();j++)
         {
             if(T[j] < T[min])
             {
@@ -20,10 +18,13 @@ int main()
         T[min] = T[i];
         T[i] = temp;
     }
-    for(int i = 0;i < N;i++)
+}
+int main()
     {
+    std::vector<int> T = {10,5,4,2,3,1,6,7,8,9};
+    selection_sort(T);
+    for(int i = 0;i < T.size();i++)
         std::cout << T[i] << " ";
-    }
     std::cout << std::endl; 
     return 0;
     }
