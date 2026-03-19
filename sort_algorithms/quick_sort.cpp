@@ -3,7 +3,9 @@
 
 int partition(std::vector<int>& T,int p, int r)
 {
-    int x = T[r];
+    //int x = T[r];
+    int x = T[p];
+    //int x = rand() % T.size();
     int i = p;
     int j = r;
     while(true)
