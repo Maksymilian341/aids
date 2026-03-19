@@ -232,6 +232,9 @@ void quick_sort(std::vector<int>& T, int p, int r)
 
 int main()
 {
+char odp;
+do
+{
 srand(time(NULL));
 int n;
 int m;
@@ -327,5 +330,10 @@ case 5:
     }
     break;
 }
+std::cout<<"Jeszcze raz? (T/N)"<<std::endl;
+std::cin>>odp;
+odp=toupper(odp);
+}
+while(odp=='T');
 return 0;
 }
